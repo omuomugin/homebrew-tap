@@ -5,20 +5,20 @@
 class Clipit < Formula
   desc ""
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/omuomugin/clipit/releases/download/v0.0.1/clipit_Darwin_x86_64.tar.gz"
-      sha256 "82dbf94df8beb9310ea2f7f1e17f4869f7af42b23301572ccc82e711c6ce1f9b"
+    if Hardware::CPU.arm?
+      url "https://github.com/omuomugin/clipit/releases/download/v0.0.2/clipit_Darwin_arm64.tar.gz"
+      sha256 "f4d6d656216fef6306846554d00dc953736ab8aa3339716f93b011347dee1976"
 
       def install
         bin.install "clipit"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/omuomugin/clipit/releases/download/v0.0.1/clipit_Darwin_arm64.tar.gz"
-      sha256 "18153d19d867d7ea45b1af04e45b4c5effb4364dcf63d564eead019a61e1d98e"
+    if Hardware::CPU.intel?
+      url "https://github.com/omuomugin/clipit/releases/download/v0.0.2/clipit_Darwin_x86_64.tar.gz"
+      sha256 "d9ae96fc6170a1b00219c2a08b07a66e1116720d24f830f217b5815d71426396"
 
       def install
         bin.install "clipit"
@@ -27,17 +27,17 @@ class Clipit < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/omuomugin/clipit/releases/download/v0.0.1/clipit_Linux_arm64.tar.gz"
-      sha256 "0dbc008f9b25851544884189eeda013dd9e268b0bbec589175624e072d328ce3"
+    if Hardware::CPU.intel?
+      url "https://github.com/omuomugin/clipit/releases/download/v0.0.2/clipit_Linux_x86_64.tar.gz"
+      sha256 "bd6cf3234cfc6e02286a629e698b73a85322d690aa2d292c56d74f5d491c7ac0"
 
       def install
         bin.install "clipit"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/omuomugin/clipit/releases/download/v0.0.1/clipit_Linux_x86_64.tar.gz"
-      sha256 "d5cc15d00ad4adac4c4d784f543c372242427dde3f547c014eb118ec56c8583e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/omuomugin/clipit/releases/download/v0.0.2/clipit_Linux_arm64.tar.gz"
+      sha256 "6e43589002b647cd17fa48f7716d8e112aa25f1ad96b4f613090b03a468fef1c"
 
       def install
         bin.install "clipit"
